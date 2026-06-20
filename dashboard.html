@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Analytics Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📊 Analytics Dashboard</h1>
+
+    <div class="dashboard-grid">
+
+        <div class="card">
+            <h3>Total Predictions</h3>
+            <h2>{{ total }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Most Searched Stock</h3>
+            <h2>{{ searched }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Average Prediction</h3>
+            <h2>₹ {{ avg_prediction }}</h2>
+        </div>
+
+        <div class="card">
+            <h3>Average Accuracy</h3>
+            <h2>{{ avg_accuracy }}%</h2>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>🚀 Top Gainers</h2>
+
+    <table>
+
+        <tr>
+            <th>Stock</th>
+            <th>Change (%)</th>
+        </tr>
+
+        {% for stock, change in gainers %}
+
+        <tr>
+
+            <td>{{ stock }}</td>
+
+            <td>{{ change }}%</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <h2>📉 Top Losers</h2>
+
+    <table>
+
+        <tr>
+            <th>Stock</th>
+            <th>Change (%)</th>
+        </tr>
+
+        {% for stock, change in losers %}
+
+        <tr>
+
+            <td>{{ stock }}</td>
+
+            <td>{{ change }}%</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <a href="/">
+        🏠 Home
+    </a>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <a href="/history">
+        📜 Prediction History
+    </a>
+
+    &nbsp;&nbsp;&nbsp;
+
+    <a href="/download">
+        ⬇ Download CSV
+    </a>
+
+</div>
+
+</body>
+
+</html>

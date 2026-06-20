@@ -1,0 +1,33 @@
+# Virtual Environment
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database
+stock_data.db
+
+# CSV Exports
+predictions.csv
+
+# IDE Files
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Environment Variables
+.env
+
+# Logs
+*.log
+
+# Plotly Generated Files (optional)
+static/stock_chart.html
+static/prediction_chart.html
